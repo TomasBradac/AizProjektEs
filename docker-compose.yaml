@@ -17,9 +17,9 @@ services:
       - ./certs:/usr/share/elasticsearch/config/certs
       - ./esdata01:/usr/share/elasticsearch/data
       - ./hunspell:/usr/share/elasticsearch/config/hunspell
-      
-    build: .
 
+    build: .
+    
     deploy:
       resources:
         limits:
@@ -52,3 +52,7 @@ services:
       - 31002:8888
     volumes:
       - ./notebooks:/home/jovyan/work
+    deploy:
+      resources:
+        limits:
+          memory: 256M
